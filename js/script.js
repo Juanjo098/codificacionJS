@@ -178,7 +178,7 @@ function reiniciarNRZ(){
 }
 
 function reiniciarAMI(){
-    for (var i = 0; i < graph_nrzs.length; i++) {
+    for (var i = 0; i < graph_amis.length; i++) {
         graph_amis[i].classList.remove('ami-cero');
         graph_amis[i].classList.remove('ami-unob-cero');
         graph_amis[i].classList.remove('ami-unoa-cero');
@@ -189,6 +189,15 @@ function reiniciarAMI(){
     }
 }
 
+function reiniciarManchester() {
+    for (let i = 0; i < graph_manchester.length; i++) {
+        graph_manchester[i].classList.remove('manchester-cero');
+        graph_manchester[i].classList.remove('manchester-cero-cero');
+        graph_manchester[i].classList.remove('manchester-uno');
+        graph_manchester[i].classList.remove('manchester-uno-uno');
+    }
+}
+
 graficar.addEventListener('click', () =>{
     bits = input_byte.value;
     if (expresiones.bits.test(bits)){
@@ -196,7 +205,7 @@ graficar.addEventListener('click', () =>{
         graficarNRZ();
         reiniciarAMI();
         graficarAMI();
-
+        reiniciarManchester();
         graficarManchester();
     }
     else{
