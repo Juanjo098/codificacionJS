@@ -24,25 +24,27 @@ body{
     gap: 1rem;
 }
 
-.nrz-conteiner{
+.generic-conteiner{
     margin: 2rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.nrz-conteiner h2{
+.generic-conteiner h2{
     flex-basis: 100%;
     text-align: center;
     margin-bottom: 1rem;
 }
 
-.graph-nrz{
-    width: 50px;
-    height: 50px;
+.generic-graph{
+    width: 100px;
+    height: 100px;
     border: 1px solid #000;
+    background-size: cover;
 }
 
+/* Codificacion NZR */
 .cero{
     background-image: url(../img/nrz/0.png);
 }
@@ -57,4 +59,33 @@ body{
 
 .uno-cero{
     background-image: url(../img/nrz/10.png);
+}
+
+/* Codificación AMI */
+.ami-cero{
+    background-image: url(../img/ami/0.png);
+}
+
+.ami-cero-unoa{
+    background-image: url(../img/ami/01a.png);
+}
+
+.ami-cero-unob{
+    background-image: url(../img/ami/01b.png);
+}
+
+.ami-unoa-unob{
+    background-image: url(../img/ami/1a1b.png);
+}
+
+.ami-unob-unoa{
+    background-image: url(../img/ami/1b1a.png);
+}
+
+.ami-unoa-cero{
+    background-image: url(../img/ami/1a0.png);
+}
+
+.ami-unob-cero{
+    background-image: url(../img/ami/1b0.png);
 }
