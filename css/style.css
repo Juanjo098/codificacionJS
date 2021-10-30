@@ -25,11 +25,14 @@ body{
 }
 
 .generic-conteiner{
-    margin: 2rem;
+    margin: 2rem auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     position: relative;
+    width: 90%;
+    max-width: 900px;
+
 }
 
 .generic-conteiner h2{
@@ -47,7 +50,7 @@ body{
 
 .bar{
     width: 800px;
-    left: 420px;
+    left: 55px;
     height: 1px;
     position: absolute;
     border: #000 dashed 1px;
