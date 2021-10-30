@@ -89,3 +89,20 @@ body{
 .ami-unob-cero{
     background-image: url(../img/ami/1b0.png);
 }
+
+/* Codificación Manchester */
+.manchester-cero{
+    background-image: url(../img/manchester/0.png);
+}
+
+.manchester-uno{
+    background-image: url(../img/manchester/1.png);
+}
+
+.manchester-cero-cero{
+    background-image: url(../img/manchester/00.png);
+}
+
+.manchester-uno-uno{
+    background-image: url(../img/manchester/11.png);
+}
