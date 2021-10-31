@@ -203,7 +203,6 @@ function graficarManchesterDif() {
         if(i == 0){
             sw += 'a';
         }
-        console.log(sw);
         switch (sw) {
             case '00a':
                 graph_manchester_dif[i].classList.add('manchester-dif-cero-d');
