@@ -110,6 +110,10 @@ body{
     background-image: url(../img/ami/1b0.png);
 }
 
+.ami-cons{
+    background-image: url(../img/ami/1c.png);
+}
+
 /* Codificación Manchester */
 .manchester-cero{
     background-image: url(../img/manchester/0.png);
