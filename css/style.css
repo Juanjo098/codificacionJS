@@ -126,3 +126,20 @@ body{
 .manchester-uno-uno{
     background-image: url(../img/manchester/11.png);
 }
+
+/* Codificación Manchester diferencial */
+.manchester-dif-cero-d{
+    background-image: url(../img/manchester_dif/0d.png);
+}
+
+.manchester-dif-cero-u{
+    background-image: url(../img/manchester_dif/0u.png);
+}
+
+.manchester-dif-uno{
+    background-image: url(../img/manchester_dif/1.png);
+}
+
+.manchester-dif-uno-uno{
+    background-image: url(../img/manchester_dif/11.png);
+}

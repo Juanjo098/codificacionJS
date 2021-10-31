@@ -5,7 +5,7 @@ const graficar = document.getElementById('graficar');
 const graph_nrzs = document.querySelectorAll('#nrz-conteiner .graph-nrz');
 const graph_amis = document.querySelectorAll('#ami-conteiner .graph-ami');
 const graph_manchester = document.querySelectorAll('#manchester-conteiner .graph-manchester');
-
+const graph_manchester_dif = document.querySelectorAll('#manchester-dif-conteiner .graph-manchester-dif');
 
 var bits = '';
 
@@ -168,6 +168,55 @@ function graficarManchester() {
     }
 }
 
+function graficarManchesterDif() {
+    var sw = 'a';
+    for (var i = 0; i < bits.length; i++) {
+        if (bits.charAt(i) == 0){
+            sw += "0";
+        }
+        else{
+            sw += "1";
+        }
+        if ((i + 1) <= bits.length){
+            if (i > 0){
+                if (bits.charAt(i) == bits.charAt(i - 1)){
+                    sw += "0";
+                }
+                else{
+                    sw += "1";
+                }
+            }
+            else{
+                sw += "0";
+            }
+        }
+        else{
+            sw += "0";
+        }
+        console.log(sw);
+        switch (sw) {
+            case 'a00':
+                graph_manchester_dif[i].classList.add('manchester-dif-cero-d');
+                break;
+            case 'a10':
+                graph_manchester_dif[i].classList.add('manchester-dif-uno');
+                break;
+            case '00':
+                graph_manchester_dif[i].classList.add('manchester-dif-cero-d');
+                break;
+            case '01':
+                graph_manchester_dif[i].classList.add('manchester-dif-cero-u');
+                break;
+            case '10':
+                graph_manchester_dif[i].classList.add('manchester-dif-uno-uno');
+                break;
+            case '11':
+                graph_manchester_dif[i].classList.add('manchester-dif-uno');
+        }
+        sw = '';
+    }
+}
+
 function reiniciarNRZ(){
     for (var i = 0; i < graph_nrzs.length; i++) {
         graph_nrzs[i].classList.remove('cero');
@@ -198,6 +247,10 @@ function reiniciarManchester() {
     }
 }
 
+function reiniciarManchesterDif() {
+    
+}
+
 graficar.addEventListener('click', () =>{
     bits = input_byte.value;
     if (expresiones.bits.test(bits)){
@@ -207,6 +260,8 @@ graficar.addEventListener('click', () =>{
         graficarAMI();
         reiniciarManchester();
         graficarManchester();
+        reiniciarManchesterDif();
+        graficarManchesterDif();
     }
     else{
         alert('Ingrese 8 dígitos que vayan del 0 al 1');
