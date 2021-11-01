@@ -59,7 +59,6 @@ function graficarNRZ(){
 function graficarAMI(){
     var uno = 0;
     var sw = '';
-    var code = ['']
     for (let i = 0; i < bits.length; i++) {
         if (bits.charAt(i) == '0'){
             sw += '0';
@@ -226,6 +225,71 @@ function graficarManchesterDif() {
     }
 }
 
+function graficarManchesterDif2(){
+    var uno = 0;
+    var sw = '';
+    for (var i = 0; i < bits.length; i++) {
+        if (bits.charAt(i) == '0'){
+            sw += '0';
+            if (uno % 2 == 0){
+                sw += '0';
+            }
+            else{
+                sw += '1';
+            }
+            uno++;
+        }
+        else{
+            sw += '1';
+            if (uno % 2 == 0){
+                sw += '0';
+            }
+            else{
+                sw += '1';
+            }
+        }
+        if(i > 0){
+            if (bits.charAt(i) == bits.charAt(i - 1)){
+                sw += '0';
+            }
+            else{
+                sw += '1';
+            }
+        }
+        else{
+            sw += '0';
+        }
+        console.log(sw);
+        switch (sw) {
+            case '000':
+                graph_manchester_dif[i].classList.add('manchester-dif-cero-d');
+                break;
+            case '001':
+                graph_manchester_dif[i].classList.add('manchester-dif-cero-d');
+                break;
+            case '010':
+                graph_manchester_dif[i].classList.add('manchester-dif-cero-u');
+                break;
+            case '011':
+                graph_manchester_dif[i].classList.add('manchester-dif-cero-u');
+                break;
+            case '100':
+                graph_manchester_dif[i].classList.add('manchester-dif-uno-uno');
+                break;
+            case '101':
+                graph_manchester_dif[i].classList.add('manchester-dif-uno');
+                break;
+            case '110':
+                graph_manchester_dif[i].classList.add('manchester-dif-uno-uno');
+                break;
+            case '111':
+                graph_manchester_dif[i].classList.add('manchester-dif-uno');
+                break;
+        }
+        sw = '';
+    }
+}
+
 function graficarPseudoternaria(){
     var uno = 0;
     var sw = '';
@@ -260,7 +324,7 @@ function graficarPseudoternaria(){
         else{
             sw += '0';
         }
-        if (i == 0 && sw == 000){
+        if (i == 0 && sw == '000'){
             sw += 'a';
         }
         switch (sw) {
@@ -359,7 +423,7 @@ graficar.addEventListener('click', () =>{
         reiniciarManchester();
         graficarManchester();
         reiniciarManchesterDif();
-        graficarManchesterDif();
+        graficarManchesterDif2();
         reiniciarPseudoternaria();
         graficarPseudoternaria();
     }
