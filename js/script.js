@@ -174,58 +174,7 @@ function graficarManchester() {
     }
 }
 
-function graficarManchesterDif() {
-    var sw = '';
-    for (var i = 0; i < bits.length; i++) {
-        if (bits.charAt(i) == 0){
-            sw += "0";
-        }
-        else{
-            sw += "1";
-        }
-        if ((i + 1) <= bits.length){
-            if (i > 0){
-                if (bits.charAt(i) != bits.charAt(i - 1)){
-                    sw += "0";
-                }
-                else{
-                    sw += "1";
-                }
-            }
-            else{
-                sw += "0";
-            }
-        }
-        else{
-            sw += "0";
-        }
-        if(i == 0){
-            sw += 'a';
-        }
-        switch (sw) {
-            case '00a':
-                graph_manchester_dif[i].classList.add('manchester-dif-cero-d');
-                break;
-            case '10a':
-                graph_manchester_dif[i].classList.add('manchester-dif-uno');
-                break;
-            case '00':
-                graph_manchester_dif[i].classList.add('manchester-dif-cero-d');
-                break;
-            case '01':
-                graph_manchester_dif[i].classList.add('manchester-dif-cero-u');
-                break;
-            case '10':
-                graph_manchester_dif[i].classList.add('manchester-dif-uno');
-                break;
-                case '11':
-                graph_manchester_dif[i].classList.add('manchester-dif-uno-uno');
-        }
-        sw = '';
-    }
-}
-
-function graficarManchesterDif2(){
+function graficarManchesterDif(){
     var uno = 0;
     var sw = '';
     for (var i = 0; i < bits.length; i++) {
@@ -259,7 +208,6 @@ function graficarManchesterDif2(){
         else{
             sw += '0';
         }
-        console.log(sw);
         switch (sw) {
             case '000':
                 graph_manchester_dif[i].classList.add('manchester-dif-cero-d');
@@ -423,7 +371,7 @@ graficar.addEventListener('click', () =>{
         reiniciarManchester();
         graficarManchester();
         reiniciarManchesterDif();
-        graficarManchesterDif2();
+        graficarManchesterDif();
         reiniciarPseudoternaria();
         graficarPseudoternaria();
     }
